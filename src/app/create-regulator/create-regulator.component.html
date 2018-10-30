@@ -1,0 +1,25 @@
+<h1>Crear Entidad Reguladora</h1>
+
+<form [formGroup]="messageForm" (ngSubmit)="onSubmit()">
+
+  <label>
+    ID:
+    <input type="text" formControlName="idEntidadReguladora">
+    <div *ngIf="submitted && messageForm.controls.idEntidadReguladora.errors">
+      <div *ngIf="messageForm.controls.idEntidadReguladora.errors.required">Es obligatorio especificar el ID de la
+        entidad reguladora</div>
+    </div>
+  </label>
+
+  <label>
+    Nombre:
+    <input type="text" formControlName="nombre">
+    <div *ngIf="submitted && messageForm.controls.nombre.errors">
+      <div *ngIf="messageForm.controls.nombre.errors.required">Es obligatorio especificar el nombre de
+        la entidad reguladora</div>
+    </div>
+  </label>
+
+  <input type="submit" value="Send message">
+
+</form>

@@ -15,8 +15,19 @@ export class BlockchainService {
   }
 
   createNewAgent(agent: Object) {
-    console.log(agent);
     this.httpClient.post(`${this.endpoint}/agent`, agent).
+      subscribe(
+        res => console.log(res),
+        err => console.log(`Couldn't add report: ${JSON.stringify(err)}`)
+      );
+  }
+
+  getAllRegulators() {
+    return this.httpClient.get(`${this.endpoint}/regulator`);
+  }
+
+  createNewRegulator(regulator: Object) {
+    this.httpClient.post(`${this.endpoint}/regulator`, regulator).
       subscribe(
         res => console.log(res),
         err => console.log(`Couldn't add report: ${JSON.stringify(err)}`)

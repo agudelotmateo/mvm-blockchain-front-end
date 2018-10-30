@@ -8,6 +8,8 @@ import { ViewAgentsComponent } from './view-agents/view-agents.component';
 import { CreateAgentComponent } from './create-agent/create-agent.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CreateRegulatorComponent } from './create-regulator/create-regulator.component';
+import { ViewRegulatorsComponent } from './view-regulators/view-regulators.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     HomeComponent,
     CreateAgentComponent,
     ViewAgentsComponent,
-    CreateAgentComponent
+    CreateAgentComponent,
+    CreateRegulatorComponent,
+    ViewRegulatorsComponent
   ],
   imports: [
     BrowserModule,
