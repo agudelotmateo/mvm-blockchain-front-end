@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CreateRegulatorComponent } from './create-regulator/create-regulator.component';
 import { ViewRegulatorsComponent } from './view-regulators/view-regulators.component';
+import { CreateCondenserDeclarationComponent } from './create-condenser-declaration/create-condenser-declaration.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ViewRegulatorsComponent } from './view-regulators/view-regulators.compo
     ViewAgentsComponent,
     CreateAgentComponent,
     CreateRegulatorComponent,
-    ViewRegulatorsComponent
+    ViewRegulatorsComponent,
+    CreateCondenserDeclarationComponent
   ],
   imports: [
     BrowserModule,
