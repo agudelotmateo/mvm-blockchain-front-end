@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BlockchainService } from '../blockchain.service';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-view-regulators',
@@ -9,10 +9,10 @@ import { BlockchainService } from '../blockchain.service';
 export class ViewRegulatorsComponent implements OnInit {
   regulators: Object;
 
-  constructor(private blockchainService: BlockchainService) { }
+  constructor(private apiService: ApiService) { }
 
   ngOnInit() {
-    this.blockchainService.getAllRegulators().subscribe(
+    this.apiService.getAllRegulators().subscribe(
       data => this.regulators = data
     );
   }

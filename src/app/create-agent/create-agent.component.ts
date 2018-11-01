@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { BlockchainService } from '../blockchain.service';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-create-agent',
@@ -14,7 +14,7 @@ export class CreateAgentComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private blockchainService: BlockchainService) { }
+    private apiService: ApiService) { }
 
   ngOnInit() {
     this.messageForm = this.formBuilder.group({
@@ -43,7 +43,7 @@ export class CreateAgentComponent implements OnInit {
       }
     }
 
-    this.blockchainService.createNewAgent(agent);
+    this.apiService.createNewAgent(agent);
     this.success = true;
   }
 

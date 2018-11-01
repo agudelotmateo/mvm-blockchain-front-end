@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { BlockchainService } from './blockchain.service';
+import { ApiService } from './api.service';
 
-describe('BlockchainService', () => {
+describe('ApiService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: BlockchainService = TestBed.get(BlockchainService);
+    const service: ApiService = TestBed.get(ApiService);
     expect(service).toBeTruthy();
   });
 });

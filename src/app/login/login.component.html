@@ -1,0 +1,23 @@
+<h1>Login</h1>
+
+<form [formGroup]="messageForm" (ngSubmit)="onSubmit()">
+
+  <label>
+    Usuario:
+    <input type="text" formControlName="username">
+    <div *ngIf="submitted && messageForm.controls.username.errors">
+      <div *ngIf="messageForm.controls.username.errors.required">Es obligatorio especificar nombre de usuario</div>
+    </div>
+  </label>
+
+  <label>
+    Contraseña:
+    <input type="text" formControlName="password">
+    <div *ngIf="submitted && messageForm.controls.password.errors">
+      <div *ngIf="messageForm.controls.password.errors.required">Es obligatorio especificar la contraseña</div>
+    </div>
+  </label>
+
+  <input type="submit" value="Send message">
+
+</form>

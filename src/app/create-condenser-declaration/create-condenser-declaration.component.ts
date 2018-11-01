@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { BlockchainService } from '../blockchain.service';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-create-condenser-declaration',
@@ -14,7 +14,7 @@ export class CreateCondenserDeclarationComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private blockchainService: BlockchainService) { }
+    private apiService: ApiService) { }
 
   ngOnInit() {
     this.messageForm = this.formBuilder.group({
@@ -52,12 +52,11 @@ export class CreateCondenserDeclarationComponent implements OnInit {
         tensionNominal: this.messageForm.controls['tensionNominal'].value,
         conexion: this.messageForm.controls['conexion'].value,
         modoConexion: this.messageForm.controls['modoConexion'].value,
-        // TODO
-        agente: `resource:co.edu.eafit.mvmblockchain.AgenteMEM#idAgenteMEM:${idAgenteMEM}`
+        agente: `resource:co.edu.eafit.mvmblockchain.AgenteMEM#idAgenteMEM:${localStorage.getItem('user')['id']}`
       }
     };
 
-    this.blockchainService.createNewAgent(condenser);
+    this.apiService.createNewAgent(condenser);
     this.success = true;
   }
 

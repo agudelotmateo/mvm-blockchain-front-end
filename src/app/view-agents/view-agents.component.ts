@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BlockchainService } from '../blockchain.service';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-view-agents',
@@ -9,10 +9,10 @@ import { BlockchainService } from '../blockchain.service';
 export class ViewAgentsComponent implements OnInit {
   agents: Object;
 
-  constructor(private blockchainService: BlockchainService) { }
+  constructor(private apiService: ApiService) { }
 
   ngOnInit() {
-    this.blockchainService.getAllAgents().subscribe(
+    this.apiService.getAllAgents().subscribe(
       data => this.agents = data
     );
   }

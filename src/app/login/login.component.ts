@@ -3,11 +3,11 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ApiService } from '../api.service';
 
 @Component({
-  selector: 'app-create-regulator',
-  templateUrl: './create-regulator.component.html',
-  styleUrls: ['./create-regulator.component.scss']
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.scss']
 })
-export class CreateRegulatorComponent implements OnInit {
+export class LoginComponent implements OnInit {
   messageForm: FormGroup;
   submitted = false;
   success = false;
@@ -18,8 +18,8 @@ export class CreateRegulatorComponent implements OnInit {
 
   ngOnInit() {
     this.messageForm = this.formBuilder.group({
-      idEntidadReguladora: ['', Validators.required],
-      nombre: ['', Validators.required]
+      username: ['', Validators.required],
+      password: ['', Validators.required]
     });
   }
 
@@ -30,15 +30,15 @@ export class CreateRegulatorComponent implements OnInit {
       return;
     }
 
-    const regulator = {};
+    const user = {};
     for (var key in this.messageForm.controls) {
       if (this.messageForm.controls.hasOwnProperty(key)) {
-        regulator[key] = this.messageForm.controls[key].value;
+        user[key] = this.messageForm.controls[key].value;
       }
     }
 
-    this.apiService.createNewRegulator(regulator);
+    this.apiService.authenticate(user);
+
     this.success = true;
   }
-
 }

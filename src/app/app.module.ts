@@ -11,6 +11,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CreateRegulatorComponent } from './create-regulator/create-regulator.component';
 import { ViewRegulatorsComponent } from './view-regulators/view-regulators.component';
 import { CreateCondenserDeclarationComponent } from './create-condenser-declaration/create-condenser-declaration.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { CreateCondenserDeclarationComponent } from './create-condenser-declarat
     CreateAgentComponent,
     CreateRegulatorComponent,
     ViewRegulatorsComponent,
-    CreateCondenserDeclarationComponent
+    CreateCondenserDeclarationComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
