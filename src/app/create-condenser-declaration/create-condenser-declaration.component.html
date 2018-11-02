@@ -31,7 +31,7 @@
 
   <label>
     Nivel de tensión de la barra:
-    <input type="text" formControlName="nivelTension">
+    <input type="number" formControlName="nivelTension">
     <div *ngIf="submitted && messageForm.controls.nivelTension.errors">
       <div *ngIf="messageForm.controls.nivelTension.errors.required">Es obligatorio especificar el nivel de tensión de
         la barra</div>
@@ -50,7 +50,7 @@
 
   <label>
     Capacidad nominal (MVAR):
-    <input type="text" formControlName="capacidadNominal">
+    <input type="number" formControlName="capacidadNominal">
     <div *ngIf="submitted && messageForm.controls.capacidadNominal.errors">
       <div *ngIf="messageForm.controls.capacidadNominal.errors.required">Es obligatorio especificar la capacidad
         nominal del condensador</div>
@@ -60,7 +60,7 @@
 
   <label>
     Tensión nominal (kV):
-    <input type="text" formControlName="tensionNominal">
+    <input type="number" formControlName="tensionNominal">
     <div *ngIf="submitted && messageForm.controls.tensionNominal.errors">
       <div *ngIf="messageForm.controls.tensionNominal.errors.required">Es obligatorio especificar la tensión nominal
         del condensador</div>

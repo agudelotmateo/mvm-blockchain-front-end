@@ -18,7 +18,8 @@ export class CreateAgentComponent implements OnInit {
 
   ngOnInit() {
     this.messageForm = this.formBuilder.group({
-      idAgenteMEM: ['', Validators.required],
+      username: ['', Validators.required],
+      password: ['', Validators.required],
       nombreEmpresa: ['', Validators.required],
       direccionEmpresa: ['', Validators.required],
       telefonoEmpresa: ['', Validators.required],

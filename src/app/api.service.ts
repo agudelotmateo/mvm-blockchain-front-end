@@ -8,16 +8,13 @@ import { Router } from '@angular/router';
 })
 export class ApiService {
   readonly endpoint = environment.serverEndpoint;
-  authToken: string;
-  user: Object;
 
   constructor(
-    private httpClient: HttpClient, 
+    private httpClient: HttpClient,
     private router: Router) { }
 
   public authenticate(user: Object) {
     return this.httpClient.post(`${this.endpoint}/authenticate`, user).subscribe(data => {
-      console.log(data);
       if (data['success']) {
         this.storeUserData(data['user'], data['token']);
         this.router.navigate(['']);
@@ -28,45 +25,73 @@ export class ApiService {
   }
 
   public getAllAgents() {
-    this.loadToken();
-    console.log(this.authToken);
-    let headers = new HttpHeaders();
-    headers = headers.append('Content-Type', 'application/json');
-    headers = headers.append('Authorization', this.authToken);
-    return this.httpClient.get(`${this.endpoint}/agent`, {
-      headers: headers
-    });
+    return this.wrapGet('agent');
   }
 
   public createNewAgent(agent: Object) {
-    this.httpClient.post(`${this.endpoint}/agent`, agent).
-      subscribe(
-        res => console.log(res),
-        err => console.log(`Couldn't add report: ${JSON.stringify(err)}`)
-      );
+    this.createNewUser({ form: agent, type: 'agent', idName: 'idAgenteMEM', route: 'agent' });
   }
 
   public getAllRegulators() {
-    return this.httpClient.get(`${this.endpoint}/regulator`);
+    return this.wrapGet('regulator');
   }
 
   public createNewRegulator(regulator: Object) {
-    this.httpClient.post(`${this.endpoint}/regulator`, regulator).
-      subscribe(
-        res => console.log(res),
-        err => console.log(`Couldn't add report: ${JSON.stringify(err)}`)
+    this.createNewUser({ form: regulator, type: 'regulator', idName: 'idEntidadReguladora', route: 'regulator' });
+  }
+
+  public getAllCondenserDeclarations() {
+    return this.wrapGet('condenser');
+  }
+
+  public createNewCondenserDeclaration(declaration: Object) {
+    this.wrapPost('condenser', declaration);
+  }
+
+  public storeUserData(user: Object, token: string) {
+    localStorage.setItem('user', JSON.stringify(user));
+    localStorage.setItem('token', token);
+  }
+
+  private wrapGet(route: string) {
+    let headers = new HttpHeaders();
+    headers = headers.append('Content-Type', 'application/json');
+    headers = headers.append('Authorization', localStorage.getItem('token'));
+    return this.httpClient.get(`${this.endpoint}/${route}`, { headers });
+  }
+
+  private wrapPost(route: String, object: Object) {
+    let headers = new HttpHeaders();
+    headers = headers.append('Content-Type', 'application/json');
+    headers = headers.append('Authorization', localStorage.getItem('token'));
+    this.httpClient.post(`${this.endpoint}/${route}`, object, { headers })
+      .subscribe(
+        res => this.router.navigate(['']),
+        err => console.log(`Couldn't post to ${route}`)
       );
   }
 
-  public storeUserData(user, token) {
-    localStorage.setItem('user', JSON.stringify(user));
-    localStorage.setItem('token', token);
-    localStorage.setItem('username', user.username);
-    this.user = user;
-    this.authToken = token;
-  }
-
-  private loadToken() {
-    this.authToken = localStorage.getItem('token');
+  private createNewUser(settings: Object) {
+    let headers = new HttpHeaders();
+    headers = headers.append('Content-Type', 'application/json');
+    headers = headers.append('Authorization', localStorage.getItem('token'));
+    this.httpClient.post(`${this.endpoint}/register`, {
+      username: settings['form']['username'],
+      password: settings['form']['password'],
+      type: settings['type']
+    }, { headers }).
+      subscribe(
+        res => {
+          delete settings['form']['username'];
+          delete settings['form']['password'];
+          settings['form'][settings['idName']] = res['id'];
+          this.httpClient.post(`${this.endpoint}/${settings["route"]}`, settings['form'], { headers }).
+            subscribe(
+              res => this.router.navigate(['']),
+              err => console.log(`Couldn't register the new ${settings["type"]} to the blockchain: ${JSON.stringify(err)}`)
+            );
+        },
+        err => console.log(`Couldn't register the ${settings["type"]} to the database: ${JSON.stringify(err)}`)
+      );
   }
 }

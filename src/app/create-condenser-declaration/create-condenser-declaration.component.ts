@@ -44,19 +44,19 @@ export class CreateCondenserDeclarationComponent implements OnInit {
           nombre: this.messageForm.controls['nombre'].value,
           barra: {
             subestacion: this.messageForm.controls['subestacion'].value,
-            nivelTension: this.messageForm.controls['nivelTension'].value,
+            nivelTension: parseInt(this.messageForm.controls['nivelTension'].value),
             nombrePuntoConexion: this.messageForm.controls['nombrePuntoConexion'].value
           }
         },
-        capacidadNominal: this.messageForm.controls['capacidadNominal'].value,
-        tensionNominal: this.messageForm.controls['tensionNominal'].value,
+        capacidadNominal: parseInt(this.messageForm.controls['capacidadNominal'].value),
+        tensionNominal: parseInt(this.messageForm.controls['tensionNominal'].value),
         conexion: this.messageForm.controls['conexion'].value,
         modoConexion: this.messageForm.controls['modoConexion'].value,
-        agente: `resource:co.edu.eafit.mvmblockchain.AgenteMEM#idAgenteMEM:${localStorage.getItem('user')['id']}`
+        agente: `resource:co.edu.eafit.mvmblockchain.AgenteMEM#idAgenteMEM:${JSON.parse(localStorage.getItem('user'))['id']}`
       }
     };
 
-    this.apiService.createNewAgent(condenser);
+    this.apiService.createNewCondenserDeclaration(condenser);
     this.success = true;
   }
 

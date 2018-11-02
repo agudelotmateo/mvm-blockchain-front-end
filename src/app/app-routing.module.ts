@@ -6,6 +6,8 @@ import { ViewRegulatorsComponent } from './view-regulators/view-regulators.compo
 import { CreateRegulatorComponent } from './create-regulator/create-regulator.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { CreateCondenserDeclarationComponent } from './create-condenser-declaration/create-condenser-declaration.component';
+import { ViewCondenserDeclarationsComponent } from './view-condenser-declarations/view-condenser-declarations.component';
 
 const routes: Routes = [
   {
@@ -31,6 +33,14 @@ const routes: Routes = [
   {
     path: 'create-regulator',
     component: CreateRegulatorComponent
+  },
+  {
+    path: 'create-condenser-declaration',
+    component: CreateCondenserDeclarationComponent
+  },
+  {
+    path: 'view-condenser-declarations',
+    component: ViewCondenserDeclarationsComponent
   }
 ];
 

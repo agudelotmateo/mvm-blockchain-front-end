@@ -18,7 +18,8 @@ export class CreateRegulatorComponent implements OnInit {
 
   ngOnInit() {
     this.messageForm = this.formBuilder.group({
-      idEntidadReguladora: ['', Validators.required],
+      username: ['', Validators.required],
+      password: ['', Validators.required],
       nombre: ['', Validators.required]
     });
   }

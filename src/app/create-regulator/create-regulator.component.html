@@ -3,11 +3,20 @@
 <form [formGroup]="messageForm" (ngSubmit)="onSubmit()">
 
   <label>
-    ID:
-    <input type="text" formControlName="idEntidadReguladora">
-    <div *ngIf="submitted && messageForm.controls.idEntidadReguladora.errors">
-      <div *ngIf="messageForm.controls.idEntidadReguladora.errors.required">Es obligatorio especificar el ID de la
+    Nombre de usuario:
+    <input type="text" formControlName="username">
+    <div *ngIf="submitted && messageForm.controls.username.errors">
+      <div *ngIf="messageForm.controls.username.errors.required">Es obligatorio especificar el nombre de usuario de la
         entidad reguladora</div>
+    </div>
+  </label>
+
+  <label>
+    Contraseña:
+    <input type="password" formControlName="password">
+    <div *ngIf="submitted && messageForm.controls.password.errors">
+      <div *ngIf="messageForm.controls.password.errors.required">Es obligatorio especificar la contraseña de la entidad
+        reguladora</div>
     </div>
   </label>
 

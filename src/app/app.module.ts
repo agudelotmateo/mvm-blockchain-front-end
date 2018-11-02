@@ -12,6 +12,7 @@ import { CreateRegulatorComponent } from './create-regulator/create-regulator.co
 import { ViewRegulatorsComponent } from './view-regulators/view-regulators.component';
 import { CreateCondenserDeclarationComponent } from './create-condenser-declaration/create-condenser-declaration.component';
 import { LoginComponent } from './login/login.component';
+import { ViewCondenserDeclarationsComponent } from './view-condenser-declarations/view-condenser-declarations.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { LoginComponent } from './login/login.component';
     CreateRegulatorComponent,
     ViewRegulatorsComponent,
     CreateCondenserDeclarationComponent,
-    LoginComponent
+    LoginComponent,
+    ViewCondenserDeclarationsComponent
   ],
   imports: [
     BrowserModule,
