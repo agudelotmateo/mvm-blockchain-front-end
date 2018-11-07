@@ -20,6 +20,8 @@ import { HomeAdminComponent } from './home-admin/home-admin.component';
 import { HomeAgenteComponent } from './home-agente/home-agente.component';
 import { HomeRegulatorComponent } from './home-regulator/home-regulator.component';
 import { LogoutComponent } from './logout/logout.component';
+import { CreateReactorDeclarationComponent } from './create-reactor-declaration/create-reactor-declaration.component';
+import { ViewReactorDeclarationsComponent } from './view-reactor-declarations/view-reactor-declarations.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import { LogoutComponent } from './logout/logout.component';
     HomeAdminComponent,
     HomeAgenteComponent,
     HomeRegulatorComponent,
-    LogoutComponent
+    LogoutComponent,
+    CreateReactorDeclarationComponent,
+    ViewReactorDeclarationsComponent
   ],
   imports: [
     BrowserModule,

@@ -11,6 +11,8 @@ import { ViewCondenserDeclarationsComponent } from './view-condenser-declaration
 import { HomeAdminComponent } from './home-admin/home-admin.component';
 import { HomeAgenteComponent } from './home-agente/home-agente.component';
 import { HomeRegulatorComponent } from './home-regulator/home-regulator.component';
+import { ViewReactorDeclarationsComponent } from './view-reactor-declarations/view-reactor-declarations.component';
+import { CreateReactorDeclarationComponent } from './create-reactor-declaration/create-reactor-declaration.component';
 
 const routes: Routes = [
   {
@@ -56,6 +58,14 @@ const routes: Routes = [
   {
     path: 'view-condenser-declarations',
     component: ViewCondenserDeclarationsComponent
+  },
+  {
+    path: 'CreateReactor',
+    component: CreateReactorDeclarationComponent
+  },
+  {
+    path: 'ViewReactor',
+    component: ViewReactorDeclarationsComponent
   }
 ];
 

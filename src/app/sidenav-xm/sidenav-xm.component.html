@@ -2,11 +2,9 @@
     <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
     <a href="">Home</a>
     <a href="view-condenser-declarations">Ver Condensadores</a>
-    <a href="ViewLine">Ver Líneas de Transmisión</a>
     <a href="ViewReactor">Ver Reactores</a>
-    <a href="ViewSvc">Ver SVC</a>
-    <a href="ViewTrans">Ver Transformadores</a>
-    <a href="ViewGen">Ver Unidades de Generación</a>
+    <a *ngIf="agent" href="create-condenser-declaration">Declarar Condensador</a>
+    <a *ngIf="agent" href="CreateReactor">Declarar Reactor</a>
 
   </div>
   

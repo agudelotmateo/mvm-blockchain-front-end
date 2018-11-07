@@ -17,29 +17,21 @@
     <![endif]-->
   </head>
   <body style="background-color: rgba(238, 238, 238, 0.829);">
-	<h3 class="form-signin-header">Declarar condensador</h3>
+	<h3 class="form-signin-header">Declarar Reactor</h3>
     <div class="row">
-      <div class="col-xs-4 form-group">
-        <label>Tipo de conexión del banco:</label>
-        <input type="text" formControlName="conexion" class="form-control">
-        <div *ngIf="submitted && messageForm.controls.conexion.errors">
-          <div *ngIf="messageForm.controls.conexion.errors.required">Es obligatorio especificar el tipo de conexión del
-                    banco</div>
-        </div>
-      </div>
-      <div class="col-xs-4 form-group">
+      <div class="col-xs-6 form-group">
         <label>
                 ID:
         </label>
-        <input type="text" formControlName="idDeclaracionCondensador" class="form-control">
-        <div *ngIf="submitted && messageForm.controls.idDeclaracionCondensador.errors">
-          <div *ngIf="messageForm.controls.idDeclaracionCondensador.errors.required">Es obligatorio especificar el ID de la
+        <input type="text" formControlName="idDeclaracionReactor" class="form-control">
+        <div *ngIf="submitted && messageForm.controls.idDeclaracionReactor.errors">
+          <div *ngIf="messageForm.controls.idDeclaracionReactor.errors.required">Es obligatorio especificar el ID de la
                     declaración del condensador</div>
         </div>
       </div>
-      <div class="col-xs-4 form-group">
+      <div class="col-xs-6 form-group">
           <label>
-              Nombre del banco de condensadores:
+              Nombre Reactor:
           </label>
               <input type="text" formControlName="nombre" class="form-control">
               <div *ngIf="submitted && messageForm.controls.nombre.errors">
@@ -49,7 +41,7 @@
       </div>
     </div>
 	<div class="row">
-        <div class="col-xs-4 form-group">
+        <div class="col-xs-6 form-group">
             <label>
                 Subestación barra:
             </label>
@@ -59,9 +51,9 @@
                     barra</div>
                 </div>
         </div>
-        <div class="col-xs-4 form-group">
+        <div class="col-xs-6 form-group">
             <label>
-                Nivel de tensión de la barra:
+                Nivel de Tension:
             </label>
                 <input type="number" formControlName="nivelTension" class="form-control">
                 <div *ngIf="submitted && messageForm.controls.nivelTension.errors">
@@ -69,7 +61,7 @@
                     la barra</div>
                 </div>
         </div>
-        <div class="col-xs-4 form-group">
+        <div class="col-xs-6 form-group">
             <label>
                 Nombre punto de conexión de la barra:
             </label>
@@ -81,29 +73,29 @@
         </div>
 	</div>
 	<div class="row">
-			<div class="col-xs-4 form-group">
+			<div class="col-xs-6 form-group">
           <label>
-              Capacidad nominal (MVAR):
+              Capacidad Nominal:
           </label>
-              <input type="number" formControlName="capacidadNominal" class="form-control">
-              <div *ngIf="submitted && messageForm.controls.capacidadNominal.errors">
-                <div *ngIf="messageForm.controls.capacidadNominal.errors.required">Es obligatorio especificar la capacidad
+              <input type="number" formControlName="capNom" class="form-control">
+              <div *ngIf="submitted && messageForm.controls.capNom.errors">
+                <div *ngIf="messageForm.controls.capNom.errors.required">Es obligatorio especificar la capacidad
                   nominal del condensador</div>
               </div>
       </div>
-      <div class="col-xs-4 form-group">
+      <div class="col-xs-6 form-group">
           <label>
-              Tensión nominal (kV):
+             Tension Nominal:
           </label>
-              <input type="number" formControlName="tensionNominal" class="form-control">
-              <div *ngIf="submitted && messageForm.controls.tensionNominal.errors">
-                <div *ngIf="messageForm.controls.tensionNominal.errors.required">Es obligatorio especificar la tensión nominal
+              <input type="number" formControlName="tenNom" class="form-control">
+              <div *ngIf="submitted && messageForm.controls.tenNom.errors">
+                <div *ngIf="messageForm.controls.tenNom.errors.required">Es obligatorio especificar la tensión nominal
                   del condensador</div>
               </div>
       </div>
-      <div class="col-xs-4 form-group">
+      <div class="col-xs-6 form-group">
           <label>
-              Tipo de conexión del banco:
+              Conexion:
           </label>
               <input type="text" formControlName="conexion" class="form-control">
               <div *ngIf="submitted && messageForm.controls.conexion.errors">
@@ -115,16 +107,16 @@
   <div class="row">
     <div class="col-xs-12 form-group">
         <label>
-            Modo de conexión:
+            Modo Conexion:
         </label>
-            <input type="text" formControlName="modoConexion" class="form-control">
-            <div *ngIf="submitted && messageForm.controls.modoConexion.errors">
-              <div *ngIf="messageForm.controls.modoConexion.errors.required">Es obligatorio especificar el modo de conexión del
+            <input type="text" formControlName="modCon" class="form-control">
+            <div *ngIf="submitted && messageForm.controls.modCon.errors">
+              <div *ngIf="messageForm.controls.modCon.errors.required">Es obligatorio especificar el modo de conexión del
                 condensador</div>
             </div>
       </div>
   </div>
-  <input class="btn btn-primary btn-block" type="submit" value="Submit">
+  <button class="btn btn-primary btn-block" (click)="thisSubmit()" >Submit</button>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
   </body>

@@ -6,10 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sidenav-xm.component.scss']
 })
 export class SidenavXmComponent implements OnInit {
+  agent = false;
 
   constructor() { }
 
   ngOnInit() {
+    let ss = JSON.parse(localStorage.getItem('user'));
+    if(ss.type == "agent"){
+      this.agent = true;
+    } else {
+      this.agent = false;
+    }
   }
 
   openNav(){

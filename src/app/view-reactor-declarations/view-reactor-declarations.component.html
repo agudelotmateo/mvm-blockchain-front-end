@@ -1,0 +1,21 @@
+<app-sidenav-xm></app-sidenav-xm>
+<app-logout></app-logout>
+<div class="container">
+  <h1>Declaraciones de Reactores</h1>
+  <ul>
+    <li *ngFor="let declaration of declarations">
+      <ul>
+        <li>ID: {{ declaration.idDeclaracionReactor }}</li>
+        <li>Nombre: {{ declaration.declaracionReactor.reactor.nombre }}</li>
+        <li>Subestacion: {{ declaration.declaracionReactor.reactor.barra.subestacion }}</li>
+        <li>Nivel Tension: {{ declaration.declaracionReactor.reactor.barra.nivelTension }}</li>
+        <li>Nombre Punto de Conexion: {{ declaration.declaracionReactor.reactor.barra.nombrePuntoConexion }}</li>
+        <li>Capacidad Nominal: {{ declaration.declaracionReactor.capacidadNominal }}</li>
+        <li>Tension Nominal: {{ declaration.declaracionReactor.tensionNominal }}</li>
+        <li>Conexion: {{ declaration.declaracionReactor.conexion }}</li>
+        <li>Modo Conexion: {{ declaration.declaracionReactor.modoConexion }}</li>
+        <li>Agente: {{ declaration.declaracionReactor.agente }}</li>
+      </ul>
+    </li>
+  </ul>
+</div>
