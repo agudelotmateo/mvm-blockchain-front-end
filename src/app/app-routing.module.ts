@@ -8,15 +8,30 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { CreateCondenserDeclarationComponent } from './create-condenser-declaration/create-condenser-declaration.component';
 import { ViewCondenserDeclarationsComponent } from './view-condenser-declarations/view-condenser-declarations.component';
+import { HomeAdminComponent } from './home-admin/home-admin.component';
+import { HomeAgenteComponent } from './home-agente/home-agente.component';
+import { HomeRegulatorComponent } from './home-regulator/home-regulator.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent
+    component: LoginComponent
   },
   {
-    path: 'login',
-    component: LoginComponent
+    path: 'home-admin',
+    component: HomeAdminComponent
+  },
+  {
+    path: 'home-agente',
+    component: HomeAgenteComponent
+  },
+  {
+    path: 'home-regulator',
+    component: HomeRegulatorComponent
+  },
+  {
+    path: 'home',
+    component: HomeComponent
   },
   {
     path: 'view-agents',

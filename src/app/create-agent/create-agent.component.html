@@ -1,87 +1,161 @@
-<h1>Crear Agente MEM</h1>
+<app-sidenav-admin></app-sidenav-admin>
+<app-logout></app-logout>
+<form [formGroup]="messageForm">
+		<!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet"/>
 
-<form [formGroup]="messageForm" (ngSubmit)="onSubmit()">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    </head>
+  <body>
+    <form class="form-signin" [formGroup]="messageForm" (ngSubmit)="onSubmit()">
+      
+      <h3 class="form-signin-header">Crear Agente MEM</h3>
 
-  <label>
-    Nombre de usuario:
-    <input type="text" formControlName="username">
-    <div *ngIf="submitted && messageForm.controls.username.errors">
-      <div *ngIf="messageForm.controls.username.errors.required">Es obligatorio especificar el nombre de usuario del
-        agente</div>
-    </div>
-  </label>
+      <div class="row">
 
-  <label>
-    Contraseña:
-    <input type="password" formControlName="password">
-    <div *ngIf="submitted && messageForm.controls.password.errors">
-      <div *ngIf="messageForm.controls.password.errors.required">Es obligatorio especificar la contraseña del
-        agente</div>
-    </div>
-  </label>
+        <div class="col-xs-6 form-group">
+          <label>
+            Nombre de usuario:
+          </label>
+            <input type="text" formControlName="username" class="form-control">
+              <div *ngIf="submitted && messageForm.controls.username.errors">
+                <div *ngIf="messageForm.controls.username.errors.required">Es obligatorio especificar el nombre de usuario del
+                  agente</div>
+              </div>
 
-  <label>
-    Empresa:
-    <input type="text" formControlName="nombreEmpresa">
-    <div *ngIf="submitted && messageForm.controls.nombreEmpresa.errors">
-      <div *ngIf="messageForm.controls.nombreEmpresa.errors.required">Es obligatorio especificar el nombre de la
-        empresa</div>
-    </div>
-  </label>
+        </div>
 
-  <label>
-    Dirección:
-    <input type="text" formControlName="direccionEmpresa">
-    <div *ngIf="submitted && messageForm.controls.direccionEmpresa.errors">
-      <div *ngIf="messageForm.controls.direccionEmpresa.errors.required">Es obligatorio especificar la dirección de la
-        empresa</div>
-    </div>
-  </label>
+        <div class="col-xs-6 form-group">
+          <label>
+            Contraseña:
+          </label>
+            <input type="password" formControlName="password" class="form-control">
+            <div *ngIf="submitted && messageForm.controls.password.errors">
+              <div *ngIf="messageForm.controls.password.errors.required">Es obligatorio especificar la contraseña del
+                agente</div>
+            </div>
+        </div>
+        
+      </div>
 
-  <label>
-    Teléfono:
-    <input type="text" formControlName="telefonoEmpresa">
-    <div *ngIf="submitted && messageForm.controls.telefonoEmpresa.errors">
-      <div *ngIf="messageForm.controls.telefonoEmpresa.errors.required">Es obligatorio especificar el teléfono de la
-        empresa</div>
-    </div>
-  </label>
+      <div class="row">
 
-  <label>
-    Fax:
-    <input type="text" formControlName="faxEmpresa">
-    <div *ngIf="submitted && messageForm.controls.faxEmpresa.errors">
-      <div *ngIf="messageForm.controls.faxEmpresa.errors.required">Es obligatorio especificar el fax de la empresa</div>
-    </div>
-  </label>
+        <div class="col-xs-6 form-group">
+          <label>
+            Empresa:
+          </label>
+          <input type="text" formControlName="nombreEmpresa" class="form-control">
+          <div *ngIf="submitted && messageForm.controls.nombreEmpresa.errors">
+            <div *ngIf="messageForm.controls.nombreEmpresa.errors.required">Es obligatorio especificar el nombre de la
+              empresa</div>
+          </div>
+        </div>
 
+        <div class="col-xs-6 form-group">
+          <label>
+            Dirección:
+          </label>
+          <input type="text" formControlName="direccionEmpresa" class="form-control">
+          <div *ngIf="submitted && messageForm.controls.direccionEmpresa.errors">
+            <div *ngIf="messageForm.controls.direccionEmpresa.errors.required">Es obligatorio especificar la dirección de la
+              empresa</div>
+            </div>
+        </div>
 
-  <label>
-    Email:
-    <input type="email" formControlName="emailEmpresa">
-    <div *ngIf="submitted && messageForm.controls.emailEmpresa.errors">
-      <div *ngIf="messageForm.controls.emailEmpresa.errors.required">Es obligatorio especificar el email de la empresa</div>
-    </div>
-  </label>
+      </div>
 
+      <div class="row">
 
-  <label>
-    Nombre:
-    <input type="text" formControlName="nombreEmpleado">
-    <div *ngIf="submitted && messageForm.controls.nombreEmpleado.errors">
-      <div *ngIf="messageForm.controls.nombreEmpleado.errors.required">Es obligatorio especificar nombre del empleado</div>
-    </div>
-  </label>
+        <div class="col-xs-6 form-group">
+          <label>
+            Telefono:
+          </label>
+          <input type="text" formControlName="telefonoEmpresa" class="form-control">
+          <div *ngIf="submitted && messageForm.controls.telefonoEmpresa.errors">
+            <div *ngIf="messageForm.controls.telefonoEmpresa.errors.required">Es obligatorio especificar el teléfono de la
+                empresa</div>
+            </div>
+        </div>
 
+        <div class="col-xs-6 form-group">
+          <label>
+              Fax:
+            </label>
+            <input type="text" formControlName="faxEmpresa" class="form-control">
+            <div *ngIf="submitted && messageForm.controls.faxEmpresa.errors">
+              <div *ngIf="messageForm.controls.faxEmpresa.errors.required">Es obligatorio especificar el teléfono de la
+                  empresa</div>
+              </div>
+          </div>
 
-  <label>
-    Cargo:
-    <input type="text" formControlName="cargoEmpleado">
-    <div *ngIf="submitted && messageForm.controls.cargoEmpleado.errors">
-      <div *ngIf="messageForm.controls.cargoEmpleado.errors.required">Es obligatorio especificar el cargo del empleado</div>
-    </div>
-  </label>
+      </div>
 
-  <input type="submit" value="Send message">
+      <div class="row">
+
+        <div class="col-xs-6 form-group">
+
+          <label>
+              Email:
+          </label>
+
+          <input type="text" formControlName="emailEmpresa" class="form-control">
+
+          <div *ngIf="submitted && messageForm.controls.emailEmpresa.errors">
+
+            <div *ngIf="messageForm.controls.emailEmpresa.errors.required">Es obligatorio especificar el email de la empresa</div>
+          
+          </div>
+
+        </div>
+
+        <div class="col-xs-6 form-group">
+
+            <label>
+                Nombre:
+            </label>
+  
+            <input type="text" formControlName="nombreEmpleado" class="form-control">
+  
+            <div *ngIf="submitted && messageForm.controls.nombreEmpleado.errors">
+  
+              <div *ngIf="messageForm.controls.nombreEmpleado.errors.required">Es obligatorio especificar nombre del empleado</div>
+            
+            </div>
+  
+          </div>
+
+      </div>
+
+      <div class="row">
+
+        <div class="col-xs-12 form-group">
+
+            <label>
+                Cargo:
+            </label>
+  
+            <input type="text" formControlName="cargoEmpleado" class="form-control">
+  
+            <div *ngIf="submitted && messageForm.controls.cargoEmpleado.errors">
+  
+              <div *ngIf="messageForm.controls.cargoEmpleado.errors.required">Es obligatorio especificar el cargo del empleado</div>
+            
+            </div>
+
+        </div>
+
+      </div>
+
+  <input type="submit" value="Send message" class="btn btn-primary btn-block">
 
 </form>

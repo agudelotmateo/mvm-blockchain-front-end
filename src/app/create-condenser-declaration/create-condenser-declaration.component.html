@@ -1,91 +1,132 @@
-<h1>Declarar condensador</h1>
+<app-sidenav-agente></app-sidenav-agente>
+<app-logout></app-logout>
+<form class="form-signin" [formGroup]="messageForm">
+		<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet"/>
 
-<form [formGroup]="messageForm" (ngSubmit)="onSubmit()">
-
-  <label>
-    ID:
-    <input type="text" formControlName="idDeclaracionCondensador">
-    <div *ngIf="submitted && messageForm.controls.idDeclaracionCondensador.errors">
-      <div *ngIf="messageForm.controls.idDeclaracionCondensador.errors.required">Es obligatorio especificar el ID de la
-        declaración del condensador</div>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body style="background-color: rgba(238, 238, 238, 0.829);">
+	<h3 class="form-signin-header">Declarar condensador</h3>
+    <div class="row">
+      <div class="col-xs-4 form-group">
+        <label>Tipo de conexión del banco:</label>
+        <input type="text" formControlName="conexion" class="form-control">
+        <div *ngIf="submitted && messageForm.controls.conexion.errors">
+          <div *ngIf="messageForm.controls.conexion.errors.required">Es obligatorio especificar el tipo de conexión del
+                    banco</div>
+        </div>
+      </div>
+      <div class="col-xs-4 form-group">
+        <label>
+                ID:
+        </label>
+        <input type="text" formControlName="idDeclaracionCondensador" class="form-control">
+        <div *ngIf="submitted && messageForm.controls.idDeclaracionCondensador.errors">
+          <div *ngIf="messageForm.controls.idDeclaracionCondensador.errors.required">Es obligatorio especificar el ID de la
+                    declaración del condensador</div>
+        </div>
+      </div>
+      <div class="col-xs-4 form-group">
+          <label>
+              Nombre del banco de condensadores:
+          </label>
+              <input type="text" formControlName="nombre" class="form-control">
+              <div *ngIf="submitted && messageForm.controls.nombre.errors">
+                <div *ngIf="messageForm.controls.nombre.errors.required">Es obligatorio especificar nombre del banco de
+                  condensadores</div>
+              </div>
+      </div>
     </div>
-  </label>
-
-  <label>
-    Nombre del banco de condensadores:
-    <input type="text" formControlName="nombre">
-    <div *ngIf="submitted && messageForm.controls.nombre.errors">
-      <div *ngIf="messageForm.controls.nombre.errors.required">Es obligatorio especificar nombre del banco de
-        condensadores</div>
-    </div>
-  </label>
-
-  <label>
-    Subestación barra:
-    <input type="text" formControlName="subestacion">
-    <div *ngIf="submitted && messageForm.controls.subestacion.errors">
-      <div *ngIf="messageForm.controls.subestacion.errors.required">Es obligatorio especificar la subestacion de la
-        barra</div>
-    </div>
-  </label>
-
-  <label>
-    Nivel de tensión de la barra:
-    <input type="number" formControlName="nivelTension">
-    <div *ngIf="submitted && messageForm.controls.nivelTension.errors">
-      <div *ngIf="messageForm.controls.nivelTension.errors.required">Es obligatorio especificar el nivel de tensión de
-        la barra</div>
-    </div>
-  </label>
-
-  <label>
-    Nombre punto de conexión de la barra:
-    <input type="text" formControlName="nombrePuntoConexion">
-    <div *ngIf="submitted && messageForm.controls.nombrePuntoConexion.errors">
-      <div *ngIf="messageForm.controls.nombrePuntoConexion.errors.required">Es obligatorio especificar nombre del punto
-        de conexión de la barra</div>
-    </div>
-  </label>
-
-
-  <label>
-    Capacidad nominal (MVAR):
-    <input type="number" formControlName="capacidadNominal">
-    <div *ngIf="submitted && messageForm.controls.capacidadNominal.errors">
-      <div *ngIf="messageForm.controls.capacidadNominal.errors.required">Es obligatorio especificar la capacidad
-        nominal del condensador</div>
-    </div>
-  </label>
-
-
-  <label>
-    Tensión nominal (kV):
-    <input type="number" formControlName="tensionNominal">
-    <div *ngIf="submitted && messageForm.controls.tensionNominal.errors">
-      <div *ngIf="messageForm.controls.tensionNominal.errors.required">Es obligatorio especificar la tensión nominal
-        del condensador</div>
-    </div>
-  </label>
-
-
-  <label>
-    Tipo de conexión del banco:
-    <input type="text" formControlName="conexion">
-    <div *ngIf="submitted && messageForm.controls.conexion.errors">
-      <div *ngIf="messageForm.controls.conexion.errors.required">Es obligatorio especificar el tipo de conexión del
-        banco</div>
-    </div>
-  </label>
-
-  <label>
-    Modo de conexión:
-    <input type="text" formControlName="modoConexion">
-    <div *ngIf="submitted && messageForm.controls.modoConexion.errors">
-      <div *ngIf="messageForm.controls.modoConexion.errors.required">Es obligatorio especificar el modo de conexión del
-        condensador</div>
-    </div>
-  </label>
-
-  <input type="submit" value="Send message">
-
-</form>
+	<div class="row">
+        <div class="col-xs-4 form-group">
+            <label>
+                Subestación barra:
+            </label>
+                <input type="text" formControlName="subestacion" class="form-control">
+                <div *ngIf="submitted && messageForm.controls.subestacion.errors">
+                  <div *ngIf="messageForm.controls.subestacion.errors.required">Es obligatorio especificar la subestacion de la
+                    barra</div>
+                </div>
+        </div>
+        <div class="col-xs-4 form-group">
+            <label>
+                Nivel de tensión de la barra:
+            </label>
+                <input type="number" formControlName="nivelTension" class="form-control">
+                <div *ngIf="submitted && messageForm.controls.nivelTension.errors">
+                  <div *ngIf="messageForm.controls.nivelTension.errors.required">Es obligatorio especificar el nivel de tensión de
+                    la barra</div>
+                </div>
+        </div>
+        <div class="col-xs-4 form-group">
+            <label>
+                Nombre punto de conexión de la barra:
+            </label>
+                <input type="text" formControlName="nombrePuntoConexion" class="form-control">
+                <div *ngIf="submitted && messageForm.controls.nombrePuntoConexion.errors">
+                  <div *ngIf="messageForm.controls.nombrePuntoConexion.errors.required">Es obligatorio especificar nombre del punto
+                    de conexión de la barra</div>
+                </div>
+        </div>
+	</div>
+	<div class="row">
+			<div class="col-xs-4 form-group">
+          <label>
+              Capacidad nominal (MVAR):
+          </label>
+              <input type="number" formControlName="capacidadNominal" class="form-control">
+              <div *ngIf="submitted && messageForm.controls.capacidadNominal.errors">
+                <div *ngIf="messageForm.controls.capacidadNominal.errors.required">Es obligatorio especificar la capacidad
+                  nominal del condensador</div>
+              </div>
+      </div>
+      <div class="col-xs-4 form-group">
+          <label>
+              Tensión nominal (kV):
+          </label>
+              <input type="number" formControlName="tensionNominal" class="form-control">
+              <div *ngIf="submitted && messageForm.controls.tensionNominal.errors">
+                <div *ngIf="messageForm.controls.tensionNominal.errors.required">Es obligatorio especificar la tensión nominal
+                  del condensador</div>
+              </div>
+      </div>
+      <div class="col-xs-4 form-group">
+          <label>
+              Tipo de conexión del banco:
+          </label>
+              <input type="text" formControlName="conexion" class="form-control">
+              <div *ngIf="submitted && messageForm.controls.conexion.errors">
+                <div *ngIf="messageForm.controls.conexion.errors.required">Es obligatorio especificar el tipo de conexión del
+                  banco</div>
+              </div>
+      </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 form-group">
+        <label>
+            Modo de conexión:
+        </label>
+            <input type="text" formControlName="modoConexion" class="form-control">
+            <div *ngIf="submitted && messageForm.controls.modoConexion.errors">
+              <div *ngIf="messageForm.controls.modoConexion.errors.required">Es obligatorio especificar el modo de conexión del
+                condensador</div>
+            </div>
+      </div>
+  </div>
+  <button class="btn btn-primary btn-block" (click)="thisSubmit()" >Submit</button>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
+</form>	

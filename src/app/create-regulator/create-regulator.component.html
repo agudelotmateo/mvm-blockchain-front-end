@@ -1,34 +1,36 @@
-<h1>Crear Entidad Reguladora</h1>
+<app-logout></app-logout>
+<app-sidenav-admin></app-sidenav-admin>
 
-<form [formGroup]="messageForm" (ngSubmit)="onSubmit()">
+<form [formGroup]="messageForm" class="form-signin" (ngSubmit)="onSubmit()">
+  <h1>Crear Entidad Reguladora</h1>
 
-  <label>
-    Nombre de usuario:
-    <input type="text" formControlName="username">
+  <div class="form-group">
+    <label class="control-label">Nombre de usuario:</label>
+    <input type="text" formControlName="username" class="form-control">
     <div *ngIf="submitted && messageForm.controls.username.errors">
       <div *ngIf="messageForm.controls.username.errors.required">Es obligatorio especificar el nombre de usuario de la
         entidad reguladora</div>
     </div>
-  </label>
+  </div>
 
-  <label>
-    Contraseña:
-    <input type="password" formControlName="password">
+  <div class="form-group">
+    <label class="control-label">Contraseña:</label>
+    <input type="text" formControlName="password" class="form-control">
     <div *ngIf="submitted && messageForm.controls.password.errors">
       <div *ngIf="messageForm.controls.password.errors.required">Es obligatorio especificar la contraseña de la entidad
         reguladora</div>
     </div>
-  </label>
+  </div>
 
-  <label>
-    Nombre:
-    <input type="text" formControlName="nombre">
-    <div *ngIf="submitted && messageForm.controls.nombre.errors">
-      <div *ngIf="messageForm.controls.nombre.errors.required">Es obligatorio especificar el nombre de
-        la entidad reguladora</div>
+  <div class="form-group">
+      <label class="control-label">Nombre:</label>
+      <input type="text" formControlName="nombre" class="form-control">
+      <div *ngIf="submitted && messageForm.controls.nombre.errors">
+        <div *ngIf="messageForm.controls.nombre.errors.required">Es obligatorio especificar la contraseña de la entidad
+          reguladora</div>
+      </div>
     </div>
-  </label>
 
-  <input type="submit" value="Send message">
+  <input class="btn btn-primary btn-block" type="submit" value="Send message">
 
 </form>

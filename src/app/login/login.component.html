@@ -1,23 +1,23 @@
-<h1>Login</h1>
+<nav>
+  <ol>
+    <img src="../../assets/153749253168974323.png" width="700" name="mvmIcon" style="top:10px; right:20px; position: relative; align-self: center;"/>
+    <div class="wrapper">
+      <form [formGroup]="messageForm" class= "form-signin" (ngSubmit)="onSubmit()">
+        <h2 class="form-signin-header">Bienvenido a Energy Suit</h2>
+        
+        <input type="text" formControlName="username" class="form-control" placeholder="Usuario">
+        <div *ngIf="submitted && messageForm.controls.username.errors">
+          <div *ngIf="messageForm.controls.username.errors.required">Es obligatorio especificar nombre de usuario</div>
+        </div>
 
-<form [formGroup]="messageForm" (ngSubmit)="onSubmit()">
+        <input type="password" formControlName="password" class="form-control" placeholder="Contraseña">
+        <div *ngIf="submitted && messageForm.controls.password.errors">
+          <div *ngIf="messageForm.controls.password.errors.required">Es obligatorio especificar la contraseña</div>
+        </div>
 
-  <label>
-    Usuario:
-    <input type="text" formControlName="username">
-    <div *ngIf="submitted && messageForm.controls.username.errors">
-      <div *ngIf="messageForm.controls.username.errors.required">Es obligatorio especificar nombre de usuario</div>
+        <input class="btn btn-primary btn-block" type="submit" value="Iniciar Sesion">
+
+      </form>
     </div>
-  </label>
-
-  <label>
-    Contraseña:
-    <input type="text" formControlName="password">
-    <div *ngIf="submitted && messageForm.controls.password.errors">
-      <div *ngIf="messageForm.controls.password.errors.required">Es obligatorio especificar la contraseña</div>
-    </div>
-  </label>
-
-  <input type="submit" value="Send message">
-
-</form>
+  </ol>
+</nav>

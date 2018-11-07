@@ -1,17 +1,21 @@
-<h1>Declaraciones de Condensadores</h1>
-<ul>
-  <li *ngFor="let declaration of declarations">
-    <ul>
-      <li>ID: {{ declaration.idDeclaracionCondensador }}</li>
-      <li>Nombre banco de condensadores: {{ declaration.declaracionCondensador.condensador.nombre }}</li>
-      <li>Subestación barra: {{ declaration.declaracionCondensador.condensador.barra.subestacion }}</li>
-      <li>Nivel de tensión barra: {{ declaration.declaracionCondensador.condensador.barra.nivelTension }}</li>
-      <li>Nombre punto de conexión barra: {{ declaration.declaracionCondensador.condensador.barra.nombrePuntoConexion }}</li>
-      <li>Capacidad nominal: {{ declaration.declaracionCondensador.capacidadNominal }}</li>
-      <li>Tensión nominal: {{ declaration.declaracionCondensador.tensionNominal }}</li>
-      <li>Tipo de conexión: {{ declaration.declaracionCondensador.conexion }}</li>
-      <li>Modo de conexión: {{ declaration.declaracionCondensador.modoConexion }}</li>
-      <li>Agente: {{ declaration.declaracionCondensador.agente }}</li>
-    </ul>
-  </li>
-</ul>
+<app-sidenav-xm></app-sidenav-xm>
+<app-logout></app-logout>
+<div class="container">
+  <h1>Declaraciones de Condensadores</h1>
+  <ul>
+    <li *ngFor="let declaration of declarations">
+      <ul>
+        <li>ID: {{ declaration.idDeclaracionCondensador }}</li>
+        <li>Nombre banco de condensadores: {{ declaration.declaracionCondensador.condensador.nombre }}</li>
+        <li>Subestación barra: {{ declaration.declaracionCondensador.condensador.barra.subestacion }}</li>
+        <li>Nivel de tensión barra: {{ declaration.declaracionCondensador.condensador.barra.nivelTension }}</li>
+        <li>Nombre punto de conexión barra: {{ declaration.declaracionCondensador.condensador.barra.nombrePuntoConexion }}</li>
+        <li>Capacidad nominal: {{ declaration.declaracionCondensador.capacidadNominal }}</li>
+        <li>Tensión nominal: {{ declaration.declaracionCondensador.tensionNominal }}</li>
+        <li>Tipo de conexión: {{ declaration.declaracionCondensador.conexion }}</li>
+        <li>Modo de conexión: {{ declaration.declaracionCondensador.modoConexion }}</li>
+        <li>Agente: {{ declaration.declaracionCondensador.agente }}</li>
+      </ul>
+    </li>
+  </ul>
+</div>
