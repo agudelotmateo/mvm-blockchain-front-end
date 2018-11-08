@@ -5,7 +5,7 @@
       <form [formGroup]="messageForm" class= "form-signin" (ngSubmit)="onSubmit()">
         <h2 class="form-signin-header">Bienvenido a Energy Suit</h2>
         
-        <input type="text" formControlName="username" class="form-control" placeholder="Usuario">
+        <input type="text" formControlName="username" class="form-control" placeholder="User">
         <div *ngIf="submitted && messageForm.controls.username.errors">
           <div *ngIf="messageForm.controls.username.errors.required">Es obligatorio especificar nombre de usuario</div>
         </div>
