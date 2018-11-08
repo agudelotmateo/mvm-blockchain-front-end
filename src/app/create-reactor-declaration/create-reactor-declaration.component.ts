@@ -30,7 +30,7 @@ export class CreateReactorDeclarationComponent implements OnInit {
     });
   }
 
-  thisSubmit() {
+  onSubmit() {
     this.submitted = true;
 
     if (this.messageForm.invalid) {
