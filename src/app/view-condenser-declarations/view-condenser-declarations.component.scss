@@ -10,13 +10,15 @@
         list-style-type: none;
         margin:0;padding:0;
         li{
+            width: 200px;
             background: rgba(238, 238, 238, 0.829);
             border-radius: 8px;
             padding: 20px;
             margin-bottom: 8px;
-            margin: 1%
+            border: 1px solid rgba(0,0,0,0.1);
+
             span{
-                font-size: 1.5em;
+                font-size: 2em;
                 text-decoration: none;
                 font-weight: bold;
                 color:#00A8FF;
