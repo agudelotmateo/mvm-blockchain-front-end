@@ -89,6 +89,7 @@ export class ApiService {
   }
 
   public createNewReactorDeclaration(declaration: Object){
+    console.log("Creando nuevo reactor (En .service)");
     this.wrapPost('reactor', declaration);
   }
 

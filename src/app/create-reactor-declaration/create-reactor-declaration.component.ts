@@ -37,6 +37,7 @@ export class CreateReactorDeclarationComponent implements OnInit {
       return;
     }
 
+    console.log("Submited Reactor");
     const reactor = {
       idDeclaracionReactor: this.messageForm.controls['idDeclaracionReactor'].value,
       declaracionReactor: {
