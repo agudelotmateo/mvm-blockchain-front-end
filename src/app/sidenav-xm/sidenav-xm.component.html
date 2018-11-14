@@ -1,14 +1,19 @@
 <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
-    <a routerLink="../home-regulator">Home</a>
-    <a routerLink="../view-condenser-declarations">Ver Condensadores</a>
-    <a routerLink="../ViewReactor">Ver Reactores</a>
-    <a routerLink="../ViewSvc">Ver SVC</a>
+    <a *ngIf="regulator" routerLink="../home-regulator">Home</a>
+    <a *ngIf="agent" routerLink="../home-agente">Home</a>
     <a *ngIf="agent" routerLink="../create-condenser-declaration">Declarar Condensador</a>
     <a *ngIf="agent" routerLink="../CreateReactor">Declarar Reactor</a>
     <a *ngIf="agent" routerLink="../CreateSvc">Declarar SVC</a>
-    
-
+    <a *ngIf="agent" routerLink="../home-agente">Declarar Linea de Transmisión</a>
+    <a *ngIf="agent" routerLink="../home-agente">Declarar Transformador</a>
+    <a *ngIf="agent" routerLink="../home-agente">Declarar Unidad de Generación</a>
+    <a routerLink="../view-condenser-declarations">Ver Condensadores</a>
+    <a routerLink="../ViewReactor">Ver Reactores</a>
+    <a routerLink="../ViewSvc">Ver SVC</a>
+    <a routerLink="../home-agente">Ver Lineas de Transmisión</a>
+    <a routerLink="../home-agente">Ver Transformadores</a>
+    <a routerLink="../home-agente">Ver Unidad de Generación</a>
   </div>
   
   <!-- Use any element to open the sidenav -->
