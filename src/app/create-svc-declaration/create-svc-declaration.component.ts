@@ -41,7 +41,7 @@ export class CreateSvcDeclarationComponent implements OnInit {
     const reactor = {
       idDeclaracionSvc: this.messageForm.controls['idDeclaracionSvc'].value,
       declaracion: {
-        reactor: {
+        scv: {
           nombre: this.messageForm.controls['nombre'].value,
           barra: {
             subestacion: this.messageForm.controls['subestacion'].value,
@@ -49,10 +49,10 @@ export class CreateSvcDeclarationComponent implements OnInit {
             nombrePuntoConexion: this.messageForm.controls['nombrePuntoConexion'].value
           }
         },
-        capacidadNominal: parseInt(this.messageForm.controls['capNom'].value),
         tensionNominal: parseInt(this.messageForm.controls['tenNom'].value),
-        conexion: this.messageForm.controls['conexion'].value,
-        modoConexion: this.messageForm.controls['modCon'].value,
+        maximaPotenciaInductiva: parseInt(this.messageForm.controls['MaxInd'].value),
+        maximaPotenciaCapacitiva: parseInt(this.messageForm.controls['MaxCap'].value),
+        unifilar: this.messageForm.controls['unifilar'].value,
         agente: `resource:co.edu.eafit.mvmblockchain.AgenteMEM#idAgenteMEM:${JSON.parse(localStorage.getItem('user'))['id']}`
       }
     };
