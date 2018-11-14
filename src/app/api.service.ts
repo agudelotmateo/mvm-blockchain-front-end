@@ -73,6 +73,7 @@ export class ApiService {
   }
 
   public getAllSvcDeclarations() {
+    console.log("Buscando all SVC");
     return this.wrapGet('svc');
   }
 

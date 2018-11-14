@@ -40,7 +40,7 @@ export class CreateSvcDeclarationComponent implements OnInit {
     console.log("Submited SVC");
     const reactor = {
       idDeclaracionSvc: this.messageForm.controls['idDeclaracionSvc'].value,
-      declaracion: {
+      declaracionSvc: {
         scv: {
           nombre: this.messageForm.controls['nombre'].value,
           barra: {
