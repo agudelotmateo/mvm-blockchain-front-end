@@ -37,7 +37,7 @@ export class CreateSvcDeclarationComponent implements OnInit {
       return;
     }
 
-    console.log("Submited Reactor");
+    console.log("Submited SVC");
     const reactor = {
       idDeclaracionSvc: this.messageForm.controls['idDeclaracionSvc'].value,
       declaracion: {
