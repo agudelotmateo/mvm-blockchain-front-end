@@ -13,6 +13,8 @@ import { HomeAgenteComponent } from './home-agente/home-agente.component';
 import { HomeRegulatorComponent } from './home-regulator/home-regulator.component';
 import { ViewReactorDeclarationsComponent } from './view-reactor-declarations/view-reactor-declarations.component';
 import { CreateReactorDeclarationComponent } from './create-reactor-declaration/create-reactor-declaration.component';
+import { CreateSvcDeclarationComponent } from './create-svc-declaration/create-svc-declaration.component';
+import { ViewSvcDeclarationsComponent } from './view-svc-declarations/view-svc-declarations.component';
 
 const routes: Routes = [
   {
@@ -66,6 +68,14 @@ const routes: Routes = [
   {
     path: 'ViewReactor',
     component: ViewReactorDeclarationsComponent
+  },
+  {
+    path: 'CreateSvc',
+    component: CreateSvcDeclarationComponent
+  },
+  {
+    path: 'ViewSvc',
+    component: ViewSvcDeclarationsComponent
   }
 ];
 

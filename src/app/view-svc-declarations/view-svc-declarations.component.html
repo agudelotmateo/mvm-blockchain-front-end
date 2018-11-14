@@ -1,0 +1,21 @@
+<app-sidenav-xm></app-sidenav-xm>
+<app-logout></app-logout>
+<div class="container">
+  <h1>Declaraciones de SVC</h1>
+  <ul>
+    <li *ngFor="let declaration of declarations" id="id">
+      <span>ID: {{ declaration.idDeclaracionSvc }}</span>
+      <ul>
+        <li>Nombre: {{ declaration.declaracionSvc.scv.nombre }}</li>
+        <li>Subestacion: {{ declaration.declaracionSvc.scv.barra.subestacion }}</li>
+        <li>Nivel Tension: {{ declaration.declaracionSvc.scv.barra.nivelTension }}</li>
+        <li>Nombre Punto de Conexion: {{ declaration.declaracionSvc.scv.barra.nombrePuntoConexion }}</li>
+        <li>Tension Nominal: {{ declaration.declaracionSvc.tensionNominal }}</li>
+        <li>Maxima Potencia Inductiva: {{ declaration.declaracionSvc.maximaPotenciaInductiva }}</li>
+        <li>Maxima Potencia Capacitiva: {{ declaration.declaracionSvc.maximaPotenciaCapacitiva }}</li>
+        <li>Unifilar: {{ declaration.declaracionSvc.unifilar }}</li>
+        <li>Agente: {{ declaration.declaracionSvc.agente }}</li>
+      </ul>
+    </li>
+  </ul>
+</div>

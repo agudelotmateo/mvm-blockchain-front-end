@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -22,6 +21,8 @@ import { HomeRegulatorComponent } from './home-regulator/home-regulator.componen
 import { LogoutComponent } from './logout/logout.component';
 import { CreateReactorDeclarationComponent } from './create-reactor-declaration/create-reactor-declaration.component';
 import { ViewReactorDeclarationsComponent } from './view-reactor-declarations/view-reactor-declarations.component';
+import { CreateSvcDeclarationComponent } from './create-svc-declaration/create-svc-declaration.component';
+import { ViewSvcDeclarationsComponent } from './view-svc-declarations/view-svc-declarations.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,9 @@ import { ViewReactorDeclarationsComponent } from './view-reactor-declarations/vi
     HomeRegulatorComponent,
     LogoutComponent,
     CreateReactorDeclarationComponent,
-    ViewReactorDeclarationsComponent
+    ViewReactorDeclarationsComponent,
+    CreateSvcDeclarationComponent,
+    ViewSvcDeclarationsComponent
   ],
   imports: [
     BrowserModule,
