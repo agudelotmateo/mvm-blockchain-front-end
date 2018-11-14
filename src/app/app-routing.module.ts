@@ -76,7 +76,8 @@ const routes: Routes = [
   {
     path: 'ViewSvc',
     component: ViewSvcDeclarationsComponent
-  }
+  },
+
 ];
 
 @NgModule({

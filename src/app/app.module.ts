@@ -46,7 +46,8 @@ import { ViewSvcDeclarationsComponent } from './view-svc-declarations/view-svc-d
     CreateReactorDeclarationComponent,
     ViewReactorDeclarationsComponent,
     CreateSvcDeclarationComponent,
-    ViewSvcDeclarationsComponent
+    ViewSvcDeclarationsComponent,
+
   ],
   imports: [
     BrowserModule,

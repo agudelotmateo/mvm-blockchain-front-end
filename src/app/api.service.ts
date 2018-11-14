@@ -85,6 +85,10 @@ export class ApiService {
     return this.wrapGet('unidadesGeneracion');
   }
 
+  public createNewLineDeclaration(declaration: Object) {
+    this.wrapPost('linea', declaration);
+  }
+
   public createNewCondenserDeclaration(declaration: Object) {
     this.wrapPost('condenser', declaration);
   }
