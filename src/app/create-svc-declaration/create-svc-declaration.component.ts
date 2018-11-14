@@ -57,7 +57,7 @@ export class CreateSvcDeclarationComponent implements OnInit {
       }
     };
 
-    this.apiService.createNewReactorDeclaration(reactor);
+    this.apiService.createNewSvcDeclaration(reactor);
     this.success = true;
   }
 
