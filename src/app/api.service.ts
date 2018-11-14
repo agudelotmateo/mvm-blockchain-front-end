@@ -88,6 +88,10 @@ export class ApiService {
     this.wrapPost('condenser', declaration);
   }
 
+  public createNewSvcDeclaration(declaration: Object) {
+    this.wrapPost('svc', declaration);
+  }
+
   public createNewReactorDeclaration(declaration: Object){
     console.log("Creando nuevo reactor (En .service)");
     this.wrapPost('reactor', declaration);
